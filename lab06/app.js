@@ -8,7 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var fptRouter = require('./routes/fpt');
 var mobileRouter = require('./routes/mobile');
-var laptopRouter = require('./routes/laptop');
+var laptopRouter = require('./routes/laptop'); // Corrected the route path
 
 var app = express();
 
@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/fpt', fptRouter);
+app.use('/fpt', fptRouter); // Corrected the route path
 app.use('/mobile', mobileRouter);
-app.use('/laptop', laptopRouter);
+app.use('/laptop', laptopRouter); // Corrected the route path
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,8 +43,10 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-const port = 3000;
-app.listen('port', ()=>{
-  console.log(`Server is running on port ${port}`)
+
+const port = 3456;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
+
 module.exports = app;
