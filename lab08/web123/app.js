@@ -20,6 +20,8 @@ mongoose.connect(uri_atlas)
 .catch((err) => console.log(err))
 //.catch((err) => console.log("connect to mongoose failed!"))
 // view engine setup
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 

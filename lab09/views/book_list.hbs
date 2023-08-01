@@ -1,0 +1,26 @@
+<h1>Book List</h1>
+<table class="table">
+    <tr colspan=""5>Book List</tr>
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Date</th>
+        <th>Image</th>
+        <th>Video</th>
+    </tr>
+    {{#each books }}
+        <tr>
+            <th>{{title}}</th>
+            <th>{{author}}</th>
+            <th>{{price}}</th>
+            <th>{{quantity}}</th>
+            <th>{{dateFormat date "DD/MM/YYYY"}}</th>
+            <th><img src="{{image}}" alt="" width="200" height="200"></th>
+            <th><iframe width="1257" height="707" src="https://www.youtube.com/embed/{{video}}" width="300" height="300"></iframe></th>
+        </tr>
+    {{/each}}
+    
+
+</table>
